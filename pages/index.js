@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Box, Button, Flex, Heading, Text, chakra, useColorMode } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Text, chakra, useColorMode, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 
 export async function getStaticProps(context) {
@@ -40,10 +40,19 @@ const Home = ({ topUsers }) => {
             mb={['2', '2', '0', '0']}
             mr={['0', '0', '4', '4']}
           >
-            Join Server
+            <Link href="https://discord.com/invite/nihon" target="_blank" _hover={{}} width="100%">
+              Join Server
+            </Link>
           </Button>
           <Button fontWeight="normal" width="240px" borderRadius="full">
-            See Reviews on Disboard
+            <Link
+              href="https://disboard.org/server/reviews/693870033431953408"
+              target="_blank"
+              _hover={{}}
+              width="100%"
+            >
+              See Reviews on Disboard
+            </Link>
           </Button>
         </Flex>
       </Box>
@@ -70,10 +79,12 @@ const Home = ({ topUsers }) => {
                   </Text>
                   <Flex flexDir="row" alignItems="center">
                     <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
-                    <Text ml="2">{user.username}</Text>
+                    <Flex flexDir="column" ml="2">
+                      <Text fontWeight="semibold">{user.username}</Text>
+                      <Text>{user.thankCount} thanks</Text>
+                    </Flex>
                   </Flex>
                 </Flex>
-                <Text>{user.thankCount} thanks</Text>
               </Flex>
             );
           })}

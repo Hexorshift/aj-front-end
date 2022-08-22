@@ -9,7 +9,7 @@ function MyApp({ Component, session, pageProps }) {
     <SessionProvider session={session}>
       <ChakraProvider theme={theme}>
         <Marquee direction="left" pauseOnHover={true} gradient={false}>
-          <Text fontWeight="semibold">Welcome to Aka Japan! Aka Japanへようこそ！</Text>
+          <Text fontWeight="semibold">Aka Japanへようこそ！</Text>
         </Marquee>
         <Component {...pageProps} />
       </ChakraProvider>

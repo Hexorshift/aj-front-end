@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from './navbar/Navbar';
 import { Container, Text } from '@chakra-ui/react';
+import Footer from './Footer';
 
 const Layout = ({ title, description, keywords, children }) => {
   return (
@@ -24,8 +25,9 @@ const Layout = ({ title, description, keywords, children }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
-      <Container maxW="1280px" height="2000px">
+      <Container maxW="1280px">
         {children}
+        <Footer />
       </Container>
     </>
   );

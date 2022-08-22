@@ -16,7 +16,8 @@ export default extendTheme({
         backgroundColor: `${props.colorMode === 'light' ? '#EDF2F7' : '#FFFFFF14'}`
       },
       body: {
-        bg: props.colorMode === 'light' ? 'white' : 'black'
+        bg: props.colorMode === 'light' ? 'white' : 'black',
+        overflowY: 'scroll'
       }
     })
   }

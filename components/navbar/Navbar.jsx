@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <>
       <Box top="0" position="sticky" className={glassClass} zIndex="40">
-        <Flex maxW="1280px" mx="auto" py="0.5" px="5" justifyContent="space-between" alignItems="center">
+        <Flex maxW="1280px" mx="auto" py="0.5" px="3" justifyContent="space-between" alignItems="center">
           <Flex alignItems="center">
             <Image src={AJLogoTransparent} width={64} height={64} quality={100} />
             <NextLink href="/" passHref>

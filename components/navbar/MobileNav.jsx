@@ -17,7 +17,7 @@ const MobileNav = ({ isOpen, links }) => {
         position="sticky"
         alignItems="end"
         flexDir="column"
-        px="8"
+        px="6"
       >
         {links.map((link, index) => {
           if (link.external) {
