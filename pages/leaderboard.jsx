@@ -47,30 +47,53 @@ const Leaderboard = ({ API_ENDPOINT, initialData }) => {
           loader={<h4>Loading...</h4>}
           endMessage={<h4>No more users to display.</h4>}
         >
-          {users.map((user) => (
-            <Flex
-              key={user._id}
-              className="leading-member-card"
-              flexDir="row"
-              justifyContent="space-between"
-              alignItems="center"
-              borderRadius="md"
-              p="3"
-              mb="2"
-              width="100%"
-            >
-              <Flex alignItems="center" justifyContent="space-between" width="100%">
-                <Flex flexDir="row" alignItems="center">
-                  <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
-                  <Flex flexDir="column" ml="2">
-                    <Text>{user.username}</Text>
-                    <Text>{comma(user.balance)}円</Text>
+          {users.map((user) => {
+            if (!user.found) {
+              return (
+                <Flex
+                  key={user._id}
+                  className="leading-member-card"
+                  flexDir="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  borderRadius="md"
+                  p="3"
+                  mb="2"
+                  width="100%"
+                >
+                  <Flex alignItems="center" justifyContent="space-between" width="100%">
+                    <Text>User left the server.</Text>
+                    <Text fontWeight="semibold">#{user.rank}</Text>
                   </Flex>
                 </Flex>
-                <Text fontWeight="semibold">#{user.rank}</Text>
-              </Flex>
-            </Flex>
-          ))}
+              );
+            } else {
+              return (
+                <Flex
+                  key={user._id}
+                  className="leading-member-card"
+                  flexDir="row"
+                  justifyContent="space-between"
+                  alignItems="center"
+                  borderRadius="md"
+                  p="3"
+                  mb="2"
+                  width="100%"
+                >
+                  <Flex alignItems="center" justifyContent="space-between" width="100%">
+                    <Flex flexDir="row" alignItems="center">
+                      <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
+                      <Flex flexDir="column" ml="2">
+                        <Text>{user.username}</Text>
+                        <Text>{comma(user.balance)}円</Text>
+                      </Flex>
+                    </Flex>
+                    <Text fontWeight="semibold">#{user.rank}</Text>
+                  </Flex>
+                </Flex>
+              );
+            }
+          })}
         </InfiniteScroll>
       </Box>
     </Layout>
