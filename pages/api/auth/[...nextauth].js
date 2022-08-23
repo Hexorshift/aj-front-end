@@ -30,6 +30,6 @@ export default NextAuth({
     })
   ],
   pages: {
-    error: '/leaderboard'
+    error: '/'
   }
 });

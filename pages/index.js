@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
-import { Box, Button, Flex, Heading, Text, chakra, useColorMode, Link } from '@chakra-ui/react';
 import Image from 'next/image';
+import { Box, Button, Flex, Heading, Text, chakra, useColorMode, Link } from '@chakra-ui/react';
 
 export async function getStaticProps(context) {
   const response = await fetch(`${process.env.API_ENDPOINT}/api/top`);
@@ -80,7 +80,7 @@ const Home = ({ topUsers }) => {
                   <Flex flexDir="row" alignItems="center">
                     <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
                     <Flex flexDir="column" ml="2">
-                      <Text fontWeight="semibold">{user.username}</Text>
+                      <Text>{user.username}</Text>
                       <Text>{user.thankCount} thanks</Text>
                     </Flex>
                   </Flex>
