@@ -63,7 +63,7 @@ const Leaderboard = ({ API_ENDPOINT, initialData }) => {
                 <Flex flexDir="row" alignItems="center">
                   <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
                   <Flex flexDir="column" ml="2">
-                    <Text fontWeight="semibold">{user.username}</Text>
+                    <Text>{user.username}</Text>
                     <Text>{comma(user.balance)}円</Text>
                   </Flex>
                 </Flex>
