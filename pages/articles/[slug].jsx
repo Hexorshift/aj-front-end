@@ -2,9 +2,12 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import readdirp from 'readdirp';
 import Layout from '../../components/Layout';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { IoMdArrowBack } from 'react-icons/io';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { Container, Heading } from '@chakra-ui/react';
+import { Heading, Container, Text, Flex, Box, IconButton } from '@chakra-ui/react';
 
 export const getStaticPaths = async () => {
   const articleFiles = await readdirp.promise('articles', { fileFilter: '*.mdx' });
@@ -39,15 +42,30 @@ export const getStaticProps = async (context) => {
 };
 
 const Article = ({ meta, slug, mdxSource }) => {
+  const router = useRouter();
+
   return (
-    <Layout title={meta.title} description="" keywords={[]}>
-      <Container maxW="100%" p="0" mt="10%">
-        <Heading mb="2" fontWeight="normal" fontSize="5xl">
+    <Layout title={meta.title} description={meta.description} keywords={[]}>
+      <Container maxW="900px" p={['3', '3', '2', '2']} mt="5%">
+        <IconButton icon={<IoMdArrowBack />} fontSize="2xl" onClick={() => router.back()} />
+        <Heading as="h2" fontSize="6xl" fontWeight="normal">
           {meta.title}
         </Heading>
-        <div className="mdx-prose">
+        <Flex alignItems="center">
+          <Image
+            src="https://cdn.discordapp.com/avatars/526449871671001098/38faf9795ed492ab4355857cd5336660.png?size=128"
+            width={48}
+            height={48}
+            style={{ borderRadius: '100%', border: '2px solid gray' }}
+            quality={100}
+          />
+          <Text ml="2">
+            {meta.author} • {meta.date}
+          </Text>
+        </Flex>
+        <Box className="mdx-prose" mt="3">
           <MDXRemote {...mdxSource} />
-        </div>
+        </Box>
       </Container>
     </Layout>
   );

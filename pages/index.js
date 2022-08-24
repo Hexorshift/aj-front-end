@@ -80,9 +80,7 @@ const Home = ({ topUsers }) => {
                   <Flex flexDir="row" alignItems="center">
                     <Image src={user.avatar} width={48} height={48} style={{ borderRadius: '100%' }} quality={100} />
                     <Flex flexDir="column" ml="2">
-                      <Text fontWeight="semibold" fontSize={['xs', 'xs', 'md', 'md']}>
-                        {user.username}
-                      </Text>
+                      <Text fontSize={['xs', 'xs', 'md', 'md']}>{user.username}</Text>
                       <Text>{user.thankCount} thanks</Text>
                     </Flex>
                   </Flex>

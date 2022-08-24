@@ -27,10 +27,7 @@ const Layout = ({ title, description, keywords, children }) => {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
-      <Container maxW="1280px">
-        {children}
-        <Footer />
-      </Container>
+      <Container maxW="1280px">{children}</Container>
       {title === 'Home' && (
         <Marquee direction="left" pauseOnHover={true} gradient={false}>
           <Text fontWeight="semibold">Aka Japanへようこそ！</Text>

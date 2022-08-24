@@ -16,13 +16,44 @@ export default extendTheme({
         backgroundColor: `${props.colorMode === 'light' ? '#EDF2F7' : '#FFFFFF14'}`
       },
       '.mdx-prose': {
+        '*': {
+          fontSize: 'xl'
+        },
         h1: {
-          fontSize: '4xl',
-          mb: '200px'
+          fontSize: '6xl'
+        },
+        h2: {
+          fontSize: '5xl'
+        },
+        h3: {
+          fontSize: '4xl'
+        },
+        h4: {
+          fontSize: '3xl'
+        },
+        h5: {
+          fontSize: '2xl'
+        },
+        h6: {
+          fontSize: 'xl'
         },
         p: {
-          fontSize: 'xl',
-          lineHeight: '1.4'
+          fontSize: 'xl'
+        },
+        blockquote: {
+          p: '2',
+          borderLeft: `2px solid ${props.colorMode === 'light' ? '#000' : '#fff'}`
+        },
+        pre: {
+          code: {
+            fontSize: 'md'
+          },
+          borderRadius: 'md',
+          backgroundColor: `${props.colorMode === 'light' ? '#EDF2F7' : '#FFFFFF14'}`,
+          p: '3'
+        },
+        img: {
+          borderRadius: 'md'
         }
       },
       body: {

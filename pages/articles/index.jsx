@@ -3,7 +3,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import NextLink from 'next/link';
 import readdirp from 'readdirp';
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Link, Text, Tag } from '@chakra-ui/react';
 
 export async function getStaticProps(context) {
   const articleFiles = await readdirp.promise(`articles`, {
@@ -36,16 +36,18 @@ const Articles = ({ articles }) => {
               <Link _hover={{}}>
                 <Flex
                   className="leading-member-card"
-                  flexDir="column"
+                  flexDir="row"
                   justifyContent="space-between"
                   borderRadius="md"
                   p="3"
                   mb="2"
                 >
-                  <Heading as="h2" fontSize="2xl" fontWeight="normal">
-                    {article.meta.title}
-                  </Heading>
-                  <Text>{article.meta.description}</Text>
+                  <Flex flexDir="column">
+                    <Heading as="h2" fontSize="2xl" fontWeight="normal">
+                      {article.meta.title}
+                    </Heading>
+                    <Text>{article.meta.description}</Text>
+                  </Flex>
                 </Flex>
               </Link>
             </NextLink>
