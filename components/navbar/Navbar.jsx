@@ -2,15 +2,16 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import AJLogoTransparent from '../../public/AJLogoTransparent.png';
 import AuthButton from './AuthButton';
+import MobileNav from './MobileNav';
+import ThemeToggle from './ThemeToggle';
 import { useEffect, useState } from 'react';
 import { Flex, IconButton, Link, Box, useDisclosure } from '@chakra-ui/react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-import MobileNav from './MobileNav';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [links] = useState([
     { name: 'Home', url: '/', external: false },
+    { name: 'Articles', url: '/articles', external: false },
     { name: 'Leaderboard', url: '/leaderboard', external: false },
     { name: 'Join Us', url: 'https://discord.com/invite/nihon', external: true }
   ]);

@@ -59,10 +59,9 @@ const Leaderboard = ({ API_ENDPOINT, initialData }) => {
                   borderRadius="md"
                   p="3"
                   mb="2"
-                  width="100%"
                 >
                   <Flex alignItems="center" justifyContent="space-between" width="100%">
-                    <Text>User left the server.</Text>
+                    <Text></Text>
                     <Text fontWeight="semibold">#{user.rank}</Text>
                   </Flex>
                 </Flex>

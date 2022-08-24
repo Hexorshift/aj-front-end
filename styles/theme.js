@@ -15,6 +15,16 @@ export default extendTheme({
       '.leading-member-card': {
         backgroundColor: `${props.colorMode === 'light' ? '#EDF2F7' : '#FFFFFF14'}`
       },
+      '.mdx-prose': {
+        h1: {
+          fontSize: '4xl',
+          mb: '200px'
+        },
+        p: {
+          fontSize: 'xl',
+          lineHeight: '1.4'
+        }
+      },
       body: {
         bg: props.colorMode === 'light' ? 'white' : 'black',
         overflowY: 'scroll'
