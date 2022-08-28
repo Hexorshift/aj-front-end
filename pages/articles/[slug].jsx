@@ -37,7 +37,8 @@ export const getStaticProps = async (context) => {
       meta,
       slug: context.params.slug,
       mdxSource
-    }
+    },
+    revalidate: 60 * 5
   };
 };
 
@@ -47,10 +48,12 @@ const Article = ({ meta, slug, mdxSource }) => {
   return (
     <Layout title={meta.title} description={meta.description} keywords={[]}>
       <Container maxW="900px" p={['3', '3', '2', '2']} mt="5%">
-        <IconButton icon={<IoMdArrowBack />} fontSize="2xl" onClick={() => router.back()} />
-        <Heading as="h2" fontSize="6xl" fontWeight="normal">
-          {meta.title}
-        </Heading>
+        <Flex flexDir="row" alignItems="center" mb="2">
+          <IconButton icon={<IoMdArrowBack />} fontSize="2xl" mr="2" onClick={() => router.back()} />
+          <Heading as="h2" fontSize={['3xl', '4xl', '5xl', '6xl']} fontWeight="normal">
+            {meta.title}
+          </Heading>
+        </Flex>
         <Flex alignItems="center">
           <Image
             src="https://cdn.discordapp.com/avatars/526449871671001098/38faf9795ed492ab4355857cd5336660.png?size=128"

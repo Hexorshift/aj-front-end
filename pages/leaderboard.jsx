@@ -15,7 +15,7 @@ export async function getStaticProps(context) {
       API_ENDPOINT,
       initialData: data.users
     },
-    revalidate: 10
+    revalidate: 60 * 5
   };
 }
 

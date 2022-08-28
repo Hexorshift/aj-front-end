@@ -10,7 +10,7 @@ export async function getStaticProps(context) {
     props: {
       topUsers: data.users
     },
-    revalidate: 10
+    revalidate: 60 * 10
   };
 }
 
@@ -97,7 +97,7 @@ const Home = ({ topUsers }) => {
             borderRadius="md"
             src={`https://discord.com/widget?id=693870033431953408&theme=${colorMode}`}
             width={['100%', '100%', '100%', '100%']}
-            height="500px"
+            height="515px"
             allowtransparency="true"
             frameBorder="0"
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
