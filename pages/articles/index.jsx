@@ -24,8 +24,7 @@ export async function getStaticProps(context) {
     props: {
       tags: ['culture', 'grammar', 'n5', 'n4', 'n3', 'n2', 'n1'],
       articles
-    },
-    revalidate: 60 * 10
+    }
   };
 }
 

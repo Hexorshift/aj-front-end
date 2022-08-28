@@ -37,8 +37,7 @@ export const getStaticProps = async (context) => {
       meta,
       slug: context.params.slug,
       mdxSource
-    },
-    revalidate: 60 * 5
+    }
   };
 };
 
