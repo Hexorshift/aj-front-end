@@ -85,6 +85,7 @@ const Articles = ({ tags, articles }) => {
         <Input
           variant="flushed"
           placeholder="Search for an article"
+          fontSize="2xl"
           mb="3"
           focusBorderColor="red"
           onChange={(e) => setSearch(e.target.value.toLowerCase())}

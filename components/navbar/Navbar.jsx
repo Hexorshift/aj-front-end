@@ -78,6 +78,8 @@ const Navbar = () => {
             icon={isOpen ? <RiCloseLine /> : <RiMenu3Line />}
             fontSize="2xl"
             background="transparent"
+            p="0"
+            m="0"
             _hover={{}}
             _active={{}}
             onClick={() => onToggle()}

@@ -46,7 +46,7 @@ const Article = ({ meta, slug, mdxSource }) => {
 
   return (
     <Layout title={meta.title} description={meta.description} keywords={[]}>
-      <Container maxW="900px" p={['3', '3', '2', '2']} mt="5%">
+      <Box maxW="900px" mt="5" mx="auto">
         <Flex flexDir="row" alignItems="center" mb="2">
           <IconButton icon={<IoMdArrowBack />} fontSize="2xl" mr="2" onClick={() => router.back()} />
           <Heading as="h2" fontSize={['3xl', '4xl', '5xl', '6xl']} fontWeight="normal">
@@ -56,8 +56,8 @@ const Article = ({ meta, slug, mdxSource }) => {
         <Flex alignItems="center">
           <Image
             src="https://cdn.discordapp.com/avatars/526449871671001098/38faf9795ed492ab4355857cd5336660.png?size=128"
-            width={48}
-            height={48}
+            width={36}
+            height={36}
             style={{ borderRadius: '100%', border: '2px solid gray' }}
             quality={100}
           />
@@ -68,7 +68,10 @@ const Article = ({ meta, slug, mdxSource }) => {
         <Box className="mdx-prose" mt="3">
           <MDXRemote {...mdxSource} />
         </Box>
-      </Container>
+        <Box>
+          <Heading>Reccomended Articles</Heading>
+        </Box>
+      </Box>
     </Layout>
   );
 };
