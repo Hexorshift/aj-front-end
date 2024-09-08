@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'Home', url: '/', external: false },
     { name: 'Articles', url: '/articles', external: false },
     { name: 'Leaderboard', url: '/leaderboard', external: false },
-    { name: 'Join Us', url: 'https://discord.com/invite/nihon', external: true }
+    { name: 'Join Us', url: 'https://discord.com/invite/fnCftrH', external: true }
   ]);
   const [glassClass, setGlassClass] = useState('');
   const { isOpen, onToggle } = useDisclosure();

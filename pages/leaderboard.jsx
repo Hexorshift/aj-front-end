@@ -7,13 +7,13 @@ import { comma } from 'number-magic';
 
 export async function getStaticProps(context) {
   const API_ENDPOINT = process.env.API_ENDPOINT;
-  const response = await fetch(`${API_ENDPOINT}/api/leaderboard?page=1&type=balance`);
-  const data = await response.json();
+  // const response = await fetch(`${API_ENDPOINT}/api/leaderboard?page=1&type=balance`);
+  // const data = await response.json();
 
   return {
     props: {
       API_ENDPOINT,
-      initialData: data.users
+      initialData: []
     },
     revalidate: 60 * 5
   };

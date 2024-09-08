@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { Box, Button, Flex, Heading, Text, chakra, useColorMode, Link } from '@chakra-ui/react';
 
 export async function getStaticProps(context) {
-  const response = await fetch(`${process.env.API_ENDPOINT}/api/top`);
-  const data = await response.json();
+  // const response = await fetch(`${process.env.API_ENDPOINT}/api/top`);
+  // const data = await response.json();
 
   return {
     props: {
-      topUsers: data.users
+      topUsers: []
     },
     revalidate: 60 * 10
   };
